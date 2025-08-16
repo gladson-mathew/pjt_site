@@ -1,383 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="description" content="This website gives you information about one of the leading spices mainly Cardamom, Pepper and Coffee traders in Kerala. Open to contact for premium quality spices">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <!-- Title -->
-  <title>PJT & CO</title>
-  <!-- Favicon -->
-  <link rel="icon" href="logo-pjt.png">
-  <!-- Core Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content=" P J Thomas & Co - Premium Cardamom, Pepper, and Coffee from Kerala's Cardamom Hills">
+   <meta name="keywords" content="spices, cardamom, pepper, coffee, Kerala, organic, farm experience">
+   <meta name="author" content=" P J Thomas & Co">
+   <title> P J Thomas & Co - Premium Spices from Kerala</title>
+   <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": " P J Thomas & Co",
+    "url": "https://pjt.co.in",
+    "logo": "https://yourdomain.com/assets/images/logo.png"
+    }
+</script>
+
+   <!-- Bootstrap CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Google Fonts -->
+   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+   <!-- AOS CSS -->
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+   <style>
+       :root {
+           --spice-brown: #4A2C2A;
+           --saffron: #F4A261;
+           --cardamom-green: #2A6041;
+           --cream: #F8EDE3;
+       }
+
+       html {
+           scroll-behavior: smooth;
+       }
+
+       body {
+           font-family: 'Roboto', sans-serif;
+           background-color: var(--cream);
+           color: var(--spice-brown);
+       }
+
+       /* Navbar */
+       .navbar {
+           background-color: #f5efe6;
+           color: #2a6041;
+           backdrop-filter: blur(8px);
+           padding: 1rem 2rem;
+           position: sticky;
+           top: 0;
+           z-index: 1000;
+       }
+       .navbar-brand {
+           font-family: 'Playfair Display', serif;
+           font-size: 1.8rem;
+           color: var(--saffron) !important;
+           margin-left: -65px;
+           color: #2a6041 !important;
+       }
+       .nav-link {
+           color: var(--cream) !important;
+           font-weight: 400;
+           color: #2a6041 !important;
+       }
+       .nav-link:hover {
+            color: #4a2c2a !important;
+       }
+
+       /* Hero Section */
+       .hero {
+           position: relative;
+           background: url('assets/images/munnar-cardamom-1-2.webp') center/cover no-repeat;
+           height: 100vh;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           text-align: center;
+           color: var(--cream);
+           animation: zoomBackground 20s ease-in-out infinite alternate;
+       }
+       .hero::before {
+           content: "";
+           position: absolute;
+           inset: 0;
+           background: rgba(0, 0, 0, 0.6);
+       }
+       .hero .container {
+           position: relative;
+           z-index: 2;
+           background: rgba(255, 255, 255, 0.1);
+           padding: 2rem;
+           border-radius: 10px;
+           backdrop-filter: blur(8px);
+       }
+       .hero h1 {
+           font-family: 'Playfair Display', serif;
+           font-size: 3.5rem;
+           margin-bottom: 1rem;
+       }
+       .hero p {
+           font-size: 1.2rem;
+           margin-bottom: 2rem;
+       }
+       .hero .btn {
+           background-color: var(--saffron);
+           border: none;
+           padding: 0.8rem 2rem;
+           font-size: 1.1rem;
+       }
+       .hero .btn:hover {
+           background-color: var(--cardamom-green);
+       }
+       @keyframes zoomBackground {
+           0% { background-size: 100%; }
+           100% { background-size: 110%; }
+       }
+
+       /* Products */
+       .products {
+    padding: 5rem 0;
+    background: 
+        linear-gradient(rgba(248, 237, 227, 0.95), rgba(248, 237, 227, 0.95)),
+        url('assets/images/munnar-cardamom-1-2.webp') center/cover no-repeat;
+    background-attachment: fixed;
+}
+       .products h2 {
+           font-family: 'Playfair Display', serif;
+           text-align: center;
+           margin-bottom: 3rem;
+           color: var(--spice-brown);
+       }
+       .card {
+           border: none;
+           border-radius: 15px;
+           overflow: hidden;
+           transition: transform 0.3s, box-shadow 0.3s;
+           background-color: #fff;
+           box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+       }
+       .card:hover {
+           transform: translateY(-10px);
+           box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+       }
+       .card-img-top {
+           height: 200px;
+           object-fit: cover;
+       }
+       .card-title {
+           font-family: 'Playfair Display', serif;
+           color: var(--spice-brown);
+           font-size: 1.25rem;
+       }
+       .card-text {
+           color: #666;
+       }
+       .btn-primary {
+           background-color: var(--cardamom-green);
+           border: none;
+       }
+       .btn-primary:hover {
+           background-color: var(--saffron);
+       }
+
+       /* About */
+       .about {
+           background: linear-gradient(rgba(74, 44, 42, 0.9), rgba(74, 44, 42, 0.9)), url('assets/images/munnar-cardamom-1-2.webp') center/cover no-repeat;
+           color: var(--cream);
+           padding: 5rem 2rem;
+           text-align: center;
+       }
+       .about h2 {
+           font-family: 'Playfair Display', serif;
+           margin-bottom: 2rem;
+       }
+       .about p {
+           font-size: 1.1rem;
+           line-height: 1.8;
+           max-width: 800px;
+           margin: 0 auto;
+       }
+
+       /* Contact */
+       .contact {
+           padding: 5rem 0;
+           background-color: #fff;
+       }
+       .contact h2 {
+           font-family: 'Playfair Display', serif;
+           text-align: center;
+           margin-bottom: 2rem;
+           color: var(--spice-brown);
+       }
+       .contact form {
+           max-width: 600px;
+           margin: 0 auto;
+           background-color: #fefefe;
+           padding: 2rem;
+           border-radius: 12px;
+           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+       }
+       .contact .form-control {
+           border-radius: 8px;
+           padding: 0.75rem;
+           border: 1px solid var(--spice-brown);
+       }
+       .contact .btn {
+           background-color: var(--saffron);
+           border: none;
+           padding: 0.75rem 2rem;
+       }
+       .contact .btn:hover {
+           background-color: var(--cardamom-green);
+       }
+
+       /* Footer */
+       .footer {
+           background-color: var(--spice-brown);
+           color: var(--cream);
+           padding: 2rem 0;
+           text-align: center;
+       }
+       .footer a {
+           color: var(--saffron);
+           text-decoration: none;
+       }
+       .footer a:hover {
+           text-decoration: underline;
+       }
+
+       /* Animations */
+       .fade-in {
+           opacity: 0;
+           transform: translateY(20px);
+           animation: fadeIn 1s ease forwards;
+       }
+       @keyframes fadeIn {
+           to {
+               opacity: 1;
+               transform: translateY(0);
+           }
+       }
+
+       /* Responsive */
+       @media (max-width: 768px) {
+           .hero h1 {
+               font-size: 2.5rem;
+           }
+           .hero p {
+               font-size: 1rem;
+           }
+           .card-img-top {
+               height: 150px;
+           }
+       }
+   </style>
 </head>
-
 <body>
-  <!-- Preloader -->
- 
 
-  <!-- ##### Header Area Start ##### -->
-  <header class="header-area">
-    <!-- Top Header Area -->
-    <div class="top-header-area" align="right">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="top-header-content d-flex align-items-center justify-content-between">
-              <!-- Top Header Content -->
-             
-              <!-- Top Header Content -->
-              <div class="top-header-meta text-right" >
-                <a href="#" data-toggle="tooltip" data-placement="bottom" title="info@pjt.co.in"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: info@pjt.co.in</span></a>
-                <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us: 9895038322</span></a>
-              </div>
-            </div>
-          </div>
+   <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg">
+       <div class="container">
+           <a class="navbar-brand d-flex align-items-center" href="#">
+  <img src="assets/images/logo.png" alt="P.J. Thomas & Co. Logo" style="height: 60px; width: auto; margin-right: 8px; ">
+  <span style=" font-family: 'Playfair Display', serif; font-size: 1.8rem;">P.J. Thomas & Co.</span>
+</a>
+           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+               <span class="navbar-toggler-icon"></span>
+           </button>
+           <div class="collapse navbar-collapse" id="navbarNav">
+               <ul class="navbar-nav ms-auto">
+                   <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                   <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+                   <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                   <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+               </ul>
+           </div>
+       </div>
+   </nav>
+
+   <!-- Hero -->
+   <section id="home" class="hero">
+       <div class="container">
+           <h1 class="fade-in">From Kerala’s Heart to the World’s Table</h1>
+           <p class="fade-in">Supplying premium black pepper, cardamom, and coffee with unmatched quality since 1985.</p>
+           <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exploreModal">
+    Explore
+</button> -->
+       </div>
+   </section>
+
+   <!-- Products -->
+   <section id="products" class="products">
+       <div class="container">
+           <h2 data-aos="fade-up">Our Premium Spices</h2>
+           <div class="row">
+               <div class="col-md-4 mb-4" data-aos="zoom-in">
+                   <div class="card">
+                       <img src="assets/images/cadamom.jpg" class="card-img-top" alt="Cardamom">
+                       <div class="card-body">
+                           <h5 class="card-title">Cardamom</h5>
+                           <p class="card-text">Our green cardamom is renowned for its vibrant colour, strong aroma, and full-bodied flavour. Carefully sorted and graded, it is ideal for culinary use, confectionery, and value-added spice blends. We supply cardamom in various sizes, including premium 8mm+ grades, packed to preserve freshness.</p>
+                           <!-- <a href="#" class="btn btn-primary">Explore</a> -->
+                       </div>
+                   </div>
+               </div>
+               <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                   <div class="card">
+                       <img src="assets/images/pepper.jpg" class="card-img-top" alt="Pepper">
+                       <div class="card-body">
+                           <h5 class="card-title"> Black Pepper</h5>
+                           <p class="card-text">Often referred to as the “King of Spices,” our black pepper is sourced from select plantations in Kerala, where the ideal climate and soil yield berries with bold flavour, rich aroma, and high piperine content. We offer multiple grades to match your requirements — from premium hand-picked varieties to bulk trade consignments.</p>
+                           <!-- <a href="#" class="btn btn-primary">Explore</a> -->
+                       </div>
+                   </div>
+               </div>
+               <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
+                   <div class="card">
+                       <img src="assets/images/coffee.jpg" class="card-img-top" alt="Coffee">
+                       <div class="card-body">
+                           <h5 class="card-title">Coffee</h5>
+                           <p class="card-text">From the misty highlands of Kerala, we source Arabica and Robusta beans known for their distinctive taste profiles. Whether you require green beans for roasting or processed coffee for direct use, our meticulous handling ensures consistent quality in every shipment.</p>
+                           <!-- <a href="#" class="btn btn-primary">Explore</a> -->
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
+
+   <!-- About -->
+   <section id="about" class="about">
+       <div class="container">
+           <h2 data-aos="fade-up">About  P J Thomas & Co</h2>
+           <p data-aos="fade-up" data-aos-delay="100">Founded in 1985, we have been dedicated to delivering the finest spices from the heart of Kerala to clients across the globe. With decades of expertise in sourcing, grading, and exporting premium-quality black pepper, cardamom, and coffee, we have built a reputation for integrity, consistency, and excellence.
+
+From our base in Idukki — a region celebrated for its lush plantations and rich soil — we work closely with farmers, processors, and trade partners to ensure that every consignment meets the highest standards of quality. Today, we proudly supply to many of India’s top masala brands, leading institutions, and renowned oleoresin manufacturers, meeting the exacting demands of their production lines.
+
+Our story is not just about spices; it’s about a heritage of craftsmanship, a dedication to quality, and a promise to bring the authentic taste of Kerala to the world.</p>
+       </div>
+   </section>
+
+   <!-- Contact -->
+   <section id="contact" class="contact">
+       <div class="container">
+           <h2 data-aos="fade-up">Get in Touch</h2>
+           <form action="https://formspree.io/f/mblkbqnk" method="POST">
+   <div class="mb-3">
+       <input type="text" name="name" class="form-control" placeholder="Name" required>
+   </div>
+   <div class="mb-3">
+       <input type="email" name="email" class="form-control" placeholder="Email" required>
+   </div>
+   <div class="mb-3">
+       <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+   </div>
+
+   <!-- Optional: redirect to thank-you page -->
+   <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+
+   <button type="submit" class="btn btn-primary">Send Message</button>
+</form>
+           <p class="mt-3 text-center">P J Thomas & Co, Kumily, Kerala 685509, India | +91 9895038322 | <a href="mailto:info@pjt.co.in">info@pjt.co.in</a></p>
+       </div>
+   </section>
+
+   <!-- Footer -->
+   <footer class="footer">
+       <div class="container">
+           <p>&copy; 2025  P J Thomas & Co. All rights reserved. | <a href="mailto:info@pjt.co.in">info@pjt.co.in</a></p>
+       </div>
+   </footer>
+
+   <!-- Bootstrap + AOS Scripts -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script>
+       AOS.init({
+           duration: 1000,
+           once: true
+       });
+   </script>
+<div class="modal fade" id="exploreModal" tabindex="-1" aria-labelledby="exploreModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="exploreModalLabel">Explore  P J Thomas & Co</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-0">
+        <div class="ratio ratio-16x9">
+          <iframe
+            src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
+            title=" P J Thomas & Co Intro Video"
+            allowfullscreen
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+          </iframe>
         </div>
       </div>
-    </div>
-
-    <!-- Navbar Area -->
-    <div class="famie-main-menu">
-      <div class="classy-nav-container breakpoint-off">
-        <div class="container">
-          <!-- Menu -->
-          <nav class="classy-navbar justify-content-between" id="famieNav">
-            <!-- Nav Brand -->
-            <a href="index.html" class="nav-brand"><img src="logo-pjt.png" alt=""></a>
-            <!-- Navbar Toggler -->
-            <div class="classy-navbar-toggler">
-              <span class="navbarToggler"><span></span><span></span><span></span></span>
-            </div>
-            <!-- Menu -->
-            <div class="classy-menu">
-              <!-- Close Button -->
-              <div class="classycloseIcon">
-                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-              </div>
-              <!-- Navbar Start -->
-              <div class="classynav">
-                <ul>
-                  <li class="active"><a href="index.html">Home</a></li>
-                  <li><a href="#about1">About</a></li>
-                                      <li><a href="#yess">Contact</a></li>
-                    </ul>
-                  </li>
-                  
-                 
-                <!-- Search Icon -->
-                <div id="searchIcon">
-                  <i class="icon_search" aria-hidden="true"></i>
-                </div>
-                <!-- Cart Icon -->
-                
-              </div>
-              <!-- Navbar End -->
-            </div>
-          </nav>
-
-          <!-- Search Form -->
-          <div class="search-form">
-            <form action="#" method="get">
-              <input type="search" name="search" id="search" placeholder="Type keywords &amp; press enter...">
-              <button type="submit" class="d-none"></button>
-            </form>
-            <!-- Close Icon -->
-            <div class="closeIcon"><i class="fa fa-times" aria-hidden="true"></i></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-  <!-- ##### Header Area End ##### -->
-
-  <!-- ##### Hero Area Start ##### -->
-  <div class="hero-area">
-    <div class="welcome-slides owl-carousel">
-
-      <!-- Single Welcome Slides -->
-      <div class="single-welcome-slides bg-img bg-overlay jarallax" style="background-image: url(pic01.jpg);">
-        <div class="container h-100">
-          <div class="row h-100 align-items-center">
-            <div class="col-12 col-lg-10">
-              <div class="welcome-content">
-                <h2 data-animation="fadeInUp" data-delay="200ms">Variety's the very spice of life, That gives it all its flavor.</h2>
-                <p data-animation="fadeInUp" data-delay="400ms">All those spices and herbs in your spice rack can do more than provide calorie-free, natural flavorings to enhance and make food delicious. They're also an incredible source of antioxidants and help rev up your metabolism and improve your health at the same time.</p>
-                <a href="#yess" class="btn famie-btn mt-4" data-animation="bounceInUp" data-delay="600ms">Contact Us</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Single Welcome Slides -->
-      <div class="single-welcome-slides bg-img bg-overlay jarallax" style="background-image: url(spice1.jpg);">
-        <div class="container h-100">
-          <div class="row h-100 align-items-center">
-            <div class="col-12 col-lg-10">
-              <div class="welcome-content">
-                <h2 data-animation="fadeInDown" data-delay="200ms">The hearth of the farm is the true center of our universe.</h2>
-                <p data-animation="fadeInDown" data-delay="400ms">This trade, which drove the world economy from the end of the Middle Ages well into the modern times, ushered in an age of European domination in the East. Channels, such as the Bay of Bengal, served as bridges for cultural and commercial exchanges between diverse cultures as nations struggled to gain control of the trade along the many spice routes.</p>
-                <a href="#" class="btn famie-btn mt-4" data-animation="bounceInDown" data-delay="600ms">Contact Us</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
-  <!-- ##### Hero Area End ##### -->
-
-  <!-- ##### Famie Benefits Area Start ##### -->
-  <section class="famie-benefits-area section-padding-100-0 pb-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="benefits-thumbnail mb-50">
-            <img src="https://cookingintongues.files.wordpress.com/2015/04/munnar-cardamom-1-2.jpg" alt="">
-          </div>
-        </div>
-      </div>
-
-      <div class="row justify-content-center">
-        <!-- Single Benefits Area -->
-        <div class="col-12 col-sm-4 col-lg">
-          <div class="single-benefits-area wow fadeInUp mb-50" data-wow-delay="100ms">
-            <img src="img/core-img/digger.png" alt="">
-            <h5>Best Services</h5>
-          </div>
-        </div>
-
-        <!-- Single Benefits Area -->
-        <div class="col-12 col-sm-4 col-lg">
-          <div class="single-benefits-area wow fadeInUp mb-50" data-wow-delay="300ms">
-            <img src="img/core-img/windmill.png" alt="">
-            <h5>Farm Experiences</h5>
-          </div>
-        </div>
-
-        <!-- Single Benefits Area -->
-        <div class="col-12 col-sm-4 col-lg">
-          <div class="single-benefits-area wow fadeInUp mb-50" data-wow-delay="500ms">
-            <img src="img/core-img/cereals.png" alt="">
-            <h5>100% Natural</h5>
-          </div>
-        </div>
-
-        <!-- Single Benefits Area -->
-        <div class="col-12 col-sm-4 col-lg">
-          <div class="single-benefits-area wow fadeInUp mb-50" data-wow-delay="700ms">
-            <img src="img/core-img/tractor.png" alt="">
-            <h5>Farm Equipment</h5>
-          </div>
-        </div>
-
-        <!-- Single Benefits Area -->
-        <div class="col-12 col-sm-4 col-lg">
-          <div class="single-benefits-area wow fadeInUp mb-50" data-wow-delay="900ms">
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <span id="about1"></span>
-  <!-- ##### Famie Benefits Area End ##### -->
-
-  <!-- ##### About Us Area Start ##### -->
-  
-  <section class="about-us-area">
-   
-    <div class="container">
-      <div class="row align-items-center">
-
-        <!-- About Us Content -->
-
-        <div class="col-12 col-md-8">
-          <div class="about-us-content mb-100">
-            <!-- Section Heading -->
-            <div class="section-heading">
-              <p>About us</p>
-              <h2><span>Let Us</span> Tell You Our Story</h2>
-              <img src="img/core-img/decor.png" alt="">
-            </div>
-            <p>The Cardamom Hills or Yela Mala are mountain range of southern India and part of the southern Western Ghats located in southeast Kerala and southwest Tamil Nadu in South India. Their name comes from the cardamom spice grown in much of the hills' cool elevation, which also supports pepper and coffee. The Western Ghats and Periyar Sub-Cluster including the Cardamom Hills, are UNESCO World Heritage Sites.</p>
-            
-          </div>
-        </div>
-
-        <!-- Famie Video Play -->
-        <div class="col-12 col-md-4">
-          <div class="famie-video-play mb-100">
-            <img class="vidimg" src="spice1.jpg" alt="">
-            <!-- Play Icon -->
-            <a href="https://youtu.be/N8LGfI8yZRY" class="play-icon"><i class="fa fa-play"></i></a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-  <!-- ##### About Us Area End ##### -->
-
-  <!-- ##### Services Area Start ##### -->
-  <section class="services-area d-flex flex-wrap">
-    <!-- Service Thumbnail -->
-    <div class="services-thumbnail bg-img jarallax" style="background-image: url('pic1111.jpg');"></div>
-
-    <!-- Service Content -->
-    <div class="services-content section-padding-100-50 px-5">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <!-- Section Heading -->
-            <div class="section-heading">
-              <p>What we do</p>
-              <h2><span>Our Produce</span> Is Mainstay For Us</h2>
-              <img src="img/core-img/decor.png" alt="">
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-         
-
-          <!-- Single Service Area -->
-          <div class="col-12 col-lg-6">
-            <div class="single-service-area mb-50 wow fadeInUp" data-wow-delay="100ms">
-              <!-- Service Title -->
-              <div class="service-title mb-3 d-flex align-items-center">
-                <img class="cardlogo" src="cardamomlogo.png" alt="">
-                <h5>Cardamom</h5>
-              </div>
-              <p>Cardamom has a very unique taste and flavor. Its aroma is very unique and makes it one of the most popular spices to be in demand around the world. </p>
-            </div>
-          </div>
-
-          <!-- Single Service Area -->
-          <div class="col-12 col-lg-6">
-            <div class="single-service-area mb-50 wow fadeInUp" data-wow-delay="300ms">
-              <!-- Service Title -->
-              <div class="service-title mb-3 d-flex align-items-center">
-                <img src="blackpep.jpg" alt="" width="30px" height="30px">
-                <h5>Pepper</h5>
-              </div>
-              <p>"It seems apt to start with pepper since this particular spice is commonly known as the “king of spices”. </p>
-            </div>
-          </div>
-
-          <!-- Single Service Area -->
-          <div class="col-12 col-lg-6">
-            <div class="single-service-area mb-50 wow fadeInUp" data-wow-delay="500ms">
-              <!-- Service Title -->
-              <div class="service-title mb-3 d-flex align-items-center">
-                <img src="coffeelogo.jpg" alt="" width="30px" height="30px">
-                <h5>Coffee</h5>
-              </div>
-              <p>Indian coffee, grown mostly in southern states under monsoon rainfall conditions, is also termed as “Indian monsooned coffee". </p>
-            </div>
-          </div>
-
-          <!-- Single Service Area -->
-      </div>
-      </div>
-    </div>
-  </section>
-  <!-- ##### Services Area End ##### -->
-
-  <!-- ##### Our Products Area Start ##### -->
-  <section class="our-products-area section-padding-100" style="height: 100px;">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <!-- Section Heading -->
-          <div class="section-heading text-center">
-            <p>Featured Products</p>
-            <h2><span>Our Product</span> Are Highest Quality</h2>
-            <img src="pic01.jpg" alt="">
-          </div>
-        </div>
-      </div>
-
-        </section>
-  <!-- ##### Our Products Area End ##### -->
-
-  
-  
-  <!-- ##### Testimonial Area End ##### -->
-
-  <!-- ##### Contact Area Start ##### -->
-  <br><br><br><br><br><br><br><br><br><br><br><br>	
-  <section class="contact-area section-padding-100-0">
-    <div class="container">
-      <div class="row justify-content-between">
-
-        <!-- Contact Content -->
-        <div class="col-12 col-lg-5">
-          <div class="contact-content mb-100">
-            <!-- Section Heading -->
-            <div class="section-heading">
-              <p id="yess">Contact now</p>
-              <h2><span>Get In Touch</span> With Us</h2>
-              <img src="img/core-img/decor.png" alt="">
-            </div >
-            <table width="300px;"><tr><td>Address:      </td><td> P J Thomas & Co, Kumily, Kerala 685509 </td>
-</tr><tr><td>PH:   </td><td>+91 9895038322</td></tr> <tr><td>Email:     </td><td>info@pjt.co.in</td></tr></table>	
-        </div></div></div></div></section>
-            
-          <div class="contact-maps mb-100">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7867.755110264672!2d77.1507060473251!3d9.60581047235332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b065451e1548e13%3A0x296700c2879819b4!2sP.J.+Thomas+%26+Co.!5e0!3m2!1sen!2sin!4v1546684023498" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-          </div>
-
-  
-    <!-- Copywrite Area  -->
-    <div class="copywrite-area">
-      <div class="container">
-        <div class="copywrite-text">
-          <div class="row align-items-center">
-            <div class="col-md-6">
-              <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-</p>
-            </div>
-           
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- ##### Footer Area End ##### -->
-
-  <!-- ##### All Javascript Files ##### -->
-  <!-- jquery 2.2.4  -->
-  <script src="js/jquery.min.js"></script>
-  <!-- Popper js -->
-  <script src="js/popper.min.js"></script>
-  <!-- Bootstrap js -->
-  <script src="js/bootstrap.min.js"></script>
-  <!-- Owl Carousel js -->
-  <script src="js/owl.carousel.min.js"></script>
-  <!-- Classynav -->
-  <script src="js/classynav.js"></script>
-  <!-- Wow js -->
-  <script src="js/wow.min.js"></script>
-  <!-- Sticky js -->
-  <script src="js/jquery.sticky.js"></script>
-  <!-- Magnific Popup js -->
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <!-- Scrollup js -->
-  <script src="js/jquery.scrollup.min.js"></script>
-  <!-- Jarallax js -->
-  <script src="js/jarallax.min.js"></script>
-  <!-- Jarallax Video js -->
-  <script src="js/jarallax-video.min.js"></script>
-  <!-- Active js -->
-  <script src="js/active.js"></script>
+</div>
 </body>
-
 </html>
