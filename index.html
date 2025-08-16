@@ -50,21 +50,29 @@
            position: sticky;
            top: 0;
            z-index: 1000;
+           display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: space-between;
        }
        .navbar-brand {
            font-family: 'Playfair Display', serif;
            font-size: 1.8rem;
            color: var(--saffron) !important;
-           margin-left: -65px;
+           margin-left: -57px;
            color: #2a6041 !important;
        }
        .nav-link {
            color: var(--cream) !important;
            font-weight: 400;
            color: #2a6041 !important;
+           flex-shrink: 0;
+           display: flex;
+           align-items: center;
        }
        .nav-link:hover {
             color: #4a2c2a !important;
+             margin-left: auto;
        }
 
        /* Hero Section */
